@@ -1,0 +1,44 @@
+unit About_Un;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  StdCtrls, ComCtrls;
+
+type
+  TAbout_Fr = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button1: TButton;
+    Label4: TLabel;
+    Animate1: TAnimate;
+    Label5: TLabel;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  About_Fr: TAbout_Fr;
+
+implementation
+
+{$R *.DFM}
+
+procedure TAbout_Fr.Button1Click(Sender: TObject);
+begin
+ About_Fr.Close;
+end;
+
+procedure TAbout_Fr.FormCreate(Sender: TObject);
+begin
+ Animate1.FIleName:= GetCurrentDir + '\1.avi';
+ Animate1.Active:= True; 
+end;
+
+end.

@@ -1,0 +1,45 @@
+unit DirUnit;
+
+interface
+   Function Per(STR:String):String;
+    Function Pas(STR:String):String;
+implementation
+   
+ Function Pas(STR:String):String;
+   Var I:Integer;s:Char;xx:String;
+   Begin
+   S:='Q';
+    I:=Length(Str);XX:='';
+    While s<>'.' do
+     Begin
+      If Not(Str[I]='.') Then xx:=STR[I]+XX;
+      I:=I-1;
+      s:=STR[I];
+      If I=0 Then
+       Begin
+        xx:='';
+        s:='.'
+       end;
+    end;
+    Pas:=XX;
+   end;
+
+Function Per(STR:String):String;
+ Var I,P:Integer;s:Char;xx:String;
+  Begin
+  S:='Q';
+   P:=Length(Str)+1;
+   While s<>'\' Do
+    Begin
+     P:=P-1;
+     s:=Str[P]
+    end;
+   For I:=1 To P-1 Do
+    Begin
+      xx:=xx+Str[I];
+    end;
+    If Length(xx)<3 Then XX:=XX+'\';
+   Per:=XX;
+ end;
+end.
+ 
